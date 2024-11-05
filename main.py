@@ -1,14 +1,14 @@
 from ultralytics import YOLO
 import cv2
 import os
-model = YOLO(r'C:\Users\nourm\python\Potholes\best2.pt')
+model = YOLO(r'C:\Users\moham\PycharmProjects\Potholes_Detection\best2.pt')
 
-cap=cv2.VideoCapture(r'C:\Users\nourm\python\Potholes\mixkit-potholes-in-a-rural-road-25208-hd-ready.mp4')
+cap=cv2.VideoCapture(r'C:\Users\moham\PycharmProjects\Potholes_Detection\mixkit-potholes-in-a-rural-road-25208-hd-ready.mp4')
 while True:
     ret,frame=cap.read()
     if not ret:
         break
-    results=model.track(frame,persist=True,conf=0.40)
+    results=model.track(frame,persist=True,conf=0.5)
 
     
 
@@ -19,4 +19,3 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 print('Done')
-print("nour")
