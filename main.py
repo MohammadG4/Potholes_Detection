@@ -77,25 +77,28 @@ while cap.isOpened():
         box = detection.xyxy[0]
         conf = detection.conf[0]
         cls = detection.cls[0]
-        ids = detection.id[0] if detection.id is not None else "N/A"
+        ids = detection.id[0] if detection.id is not None else -1
         x1, y1, x2, y2 = map(int, box[:4])
-
-        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
         width = x2 - x1
         height = y2 - y1
 
         # Use median depth in centimeters
         depth_map = estimate_depth(frame, (x1, y1, x2, y2))
+        depth_text = f"Pothole{ids} - Width: {width}, Height: {height}, Depth: {depth_map:.2f} cm"
+
+        if width*height >= 23000 or depth_map >= 2.0 :
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 2)
+            cv2.putText(frame, depth_text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+
+        else:
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(frame, depth_text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
         l1.append(int(ids))
         l2.append(height)
         l3.append(width)
         l4.append(depth_map)
-
-        # add_data(ids, width, height, depth_map)
-        depth_text = f"Pothole{ids} - Width: {width}, Height: {height}, Depth: {depth_map:.2f} cm"
-        cv2.putText(frame, depth_text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
 
 
         # Display the information
