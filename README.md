@@ -86,8 +86,6 @@ pothole-detection/
 ├── best2.pt                  # YOLO model weights
 ├── df_mean.csv               # Generated dataset
 ├── main.py                   # Pothole detection script
-├── midas_depth.py            # Depth estimation script
-├── loss_graph.png            # Training loss graph
 ├── pothole_detection_demo.mp4
 ├── midas_depth_demo.mp4
 └── datasets/
