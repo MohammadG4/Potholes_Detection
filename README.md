@@ -1,4 +1,4 @@
-![IMG_20241124_022601](https://github.com/user-attachments/assets/f8fdf297-08a1-4b9f-bee5-d8ae9baefcc5)
+![IMG_20241124_023409](https://github.com/user-attachments/assets/8a9b65f6-20f2-44f2-8ed0-06c2d07e6eb3)
 # Pothole Detection System 🚧
 
 An efficient, economical, and AI-driven solution to improve road safety by detecting potholes in real time.
