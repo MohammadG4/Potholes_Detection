@@ -22,7 +22,7 @@ An efficient, economical, and AI-driven solution to improve road safety by detec
 
 ## 🛠 About the Project
 
-This project leverages YOLOv8 for pothole detection and MiDaS for depth estimation to provide a cost-effective 
+This project leverages YOLOv11 for pothole detection and MiDaS for depth estimation to provide a cost-effective 
 alternative to expensive stereo camera systems used in vehicles like Tesla. The system alerts drivers to upcoming 
 potholes and logs data about pothole dimensions for further analysis. By addressing road safety issues, this tool 
 provides an economical way to enhance transportation infrastructure.
@@ -31,7 +31,7 @@ provides an economical way to enhance transportation infrastructure.
 
 ## 🌟 Key Features
 
-- High-Accuracy Detection: Utilizes YOLOv8 to detect potholes with precision in real-time.
+- High-Accuracy Detection: Utilizes YOLOv11(nano) to detect potholes with precision in real-time.
 - Pothole Dimensions: Measures the height, width, and depth of potholes using MiDaS depth estimation.
 - Driver Alerts: Warns drivers of approaching potholes to improve road safety.
 - Cost-Effective Solution: Eliminates the need for stereo cameras, making it an affordable alternative for wider adoption.
